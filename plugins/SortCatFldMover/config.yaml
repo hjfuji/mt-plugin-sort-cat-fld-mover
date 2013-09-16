@@ -1,0 +1,32 @@
+name: SortCatFld Mover
+id: SortCatFldMover
+author_name: <__trans phrase="Hajime Fujimoto">
+author_link: http://www.h-fj.com/blog/
+description: <__trans phrase="Mover plugin from SortCatFld plugin to Movable Type 5.1 native category / folder sorting function.">
+plugin_link: http://www.h-fj.com/blog/mt5plgdoc/sortcatfldmover.php
+doc_link: http://www.h-fj.com/blog/mt5plgdoc/sortcatfldmover.php
+l10n_class: SortCatFldMover::L10N
+version: 1.00
+schema_version: 1.01
+system_config_template: system_config.tmpl
+object_types:
+  category:
+    order_number: integer
+applications:
+  cms:
+    methods:
+      fjscfm_move_start: $SortCatFldMover::SortCatFldMover::CMS::move_start
+      fjscfm_select_blogs: $SortCatFldMover::SortCatFldMover::CMS::select_blogs
+      fjscfm_move: $SortCatFldMover::SortCatFldMover::CMS::move
+init_app: $SortCatFldMover::SortCatFldMover::CMS::init_app
+tags:
+  block:
+    SortedTopLevelCategories: $SortCatFldMover::SortCatFldMover::ContextHandlers::sorted_top_level_categories
+    SortedSubCategories: $SortCatFldMover::SortCatFldMover::ContextHandlers::sorted_sub_categories
+    SortedTopLevelFolders: $SortCatFldMover::SortCatFldMover::ContextHandlers::sorted_top_level_folders
+    SortedSubFolders: $SortCatFldMover::SortCatFldMover::ContextHandlers::sorted_sub_folders
+    SortedEntryCategories: $SortCatFldMover::SortCatFldMover::ContextHandlers::sorted_entry_categories
+    SortedCategoryPrevious: $SortCatFldMover::SortCatFldMover::ContextHandlers::sorted_category_prev_next
+    SortedCategoryNext: $SortCatFldMover::SortCatFldMover::ContextHandlers::sorted_category_prev_next
+    SortedFolderPrevious: $SortCatFldMover::SortCatFldMover::ContextHandlers::sorted_folder_prev_next
+    SortedFolderNext: $SortCatFldMover::SortCatFldMover::ContextHandlers::sorted_folder_prev_next
