@@ -2,11 +2,11 @@ name: SortCatFld Mover
 id: SortCatFldMover
 author_name: <__trans phrase="Hajime Fujimoto">
 author_link: http://www.h-fj.com/blog/
-description: <__trans phrase="Mover plugin from SortCatFld plugin to Movable Type 5.1 native category / folder sorting function.">
+description: <__trans phrase="Mover plugin from SortCatFld plugin to Movable Type 5.1+ native category / folder sorting function.">
 plugin_link: http://www.h-fj.com/blog/mt5plgdoc/sortcatfldmover.php
 doc_link: http://www.h-fj.com/blog/mt5plgdoc/sortcatfldmover.php
 l10n_class: SortCatFldMover::L10N
-version: 1.00
+version: 1.01
 schema_version: 1.01
 system_config_template: system_config.tmpl
 object_types:

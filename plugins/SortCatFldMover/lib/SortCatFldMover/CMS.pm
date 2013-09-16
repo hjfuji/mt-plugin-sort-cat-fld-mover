@@ -103,7 +103,7 @@ sub move {
         my $blog_id = $app->param('blog_id');
         $blog = MT->model('blog')->load($blog_id) ||
                 MT->model('website')->load($blog_id);
-        my @classes = ($blog->is_blog)
+        my @classes = ($blog->is_blog || MT->version_number ge '6.0')
                     ? qw( category folder ) : qw( folder );
         for my $class (@classes) {
             my @cats = MT->model($class)->load(
@@ -132,7 +132,7 @@ sub move {
         $json .= '"ok":1}'
     }
 
-    $app->send_http_header("application/json");
+    $app->send_http_header("application/json; charset=utf-8");
     $app->{no_print_body} = 1;
     $app->print_encode($json);
     return undef;
